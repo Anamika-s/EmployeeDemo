@@ -7,15 +7,17 @@
         int salary;
         public const string companyName="UST" ;
         // Default Constructor
-          public Employee() {} 
+           public Employee() {
+        Console.WriteLine("Enter ID");
+        id = Convert.ToByte(Console.ReadLine());
+    } 
         // Parameterized Constructor
         public Employee(string name)
         {
             this.name = name;
             Console.WriteLine("Enter ID");
             id= Convert.ToByte(Console.ReadLine());
-            Console.WriteLine("Enter Department");
-            dept = Console.ReadLine();
+            
             Console.WriteLine("Enter Salary");
             salary = Convert.ToInt16(Console.ReadLine());
         }
@@ -25,8 +27,7 @@
             this.name = name;
              
             this.id= id;
-            Console.WriteLine("Enter Department");
-            dept = Console.ReadLine();
+            
             Console.WriteLine("Enter Salary");
             salary = Convert.ToInt16(Console.ReadLine());
         }
@@ -34,11 +35,7 @@
         public Employee(int id, string name, string dept, int salary)
         {
             this.name = name;
-             
             this.id= id;
-             
-            this.dept = dept;
-            
             this.salary = salary;
             }
    // Static Constructor , Parameterless
@@ -46,10 +43,17 @@
             {
                 dept="HR";
             }
+    // Copy Constructor
+    public Employee(Employee empObject)
+    {
+        Console.WriteLine("Enter ID");
+        id = Convert.ToByte(Console.ReadLine());
+        this.name = empObject.name;
+        this.salary = empObject.salary;
+    }
         public  void GetDetails()
         {
-            Console.WriteLine("Enter ID");
-            id= Convert.ToByte(Console.ReadLine());
+           
             Console.WriteLine("Enter Name");
             name = Console.ReadLine();
 // Console.WriteLine("Enter Department");
